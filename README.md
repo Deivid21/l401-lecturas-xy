@@ -58,9 +58,9 @@ La aplicación móvil se encuentra dentro del proyecto:
 XYaTCPfull.apk
 ```
 
-También puede descargarse desde el siguiente enlace dentro del repositorio:
+También puede descargarse desde el siguiente enlace:
 
-[Descargar XYaTCPfull.apk](./XYaTCPfull.apk)
+[Descargar XYaTCPfull.apk](https://github.com/Deivid21/l401-lecturas-xy/raw/refs/heads/main/resources/XYaTCPfull.apk)
 
 > Importante: el celular y el computador deben estar conectados a la misma red local para que la comunicación funcione correctamente.
 
@@ -85,7 +85,8 @@ La estructura base del proyecto es la siguiente:
 .
 ├── app.py
 ├── README.md
-├── XYaTCPfull.apk
+├── resources
+│   ├── XYaTCPfull.apk
 ├── screenshoots
 │   ├── device-view.png
 │   ├── ip-device.png
@@ -101,7 +102,7 @@ La estructura base del proyecto es la siguiente:
 | `app.py` | Archivo principal del servidor Flask. Recibe los datos X e Y y los envía al HTML. |
 | `templates/index.html` | Página web que muestra los datos y la interfaz gráfica. |
 | `README.md` | Documento explicativo del proyecto. |
-| `XYaTCPfull.apk` | Aplicación Android utilizada para enviar los datos al servidor. |
+| `resources/XYaTCPfull.apk` | Aplicación Android utilizada para enviar los datos al servidor. |
 | `screenshoots/` | Carpeta para guardar imágenes del funcionamiento del proyecto. |
 
 ---
