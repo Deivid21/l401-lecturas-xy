@@ -103,5 +103,9 @@ def moto_z():
 def one():
     return render_template("devices/one.html")
 
+@app.route("/devices/coming-soon")
+def coming_soon():
+    return render_template("devices/coming-soon.html")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

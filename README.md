@@ -81,6 +81,7 @@ cd l401-lecturas-xy
 La estructura base del proyecto es la siguiente:
 
 ```text
+.
 ├── app.py
 ├── README.md
 ├── resources
@@ -92,6 +93,7 @@ La estructura base del proyecto es la siguiente:
 └── templates
     ├── device.html
     ├── devices
+    │   ├── coming-soon.html
     │   ├── defy.html
     │   ├── edge.html
     │   ├── lenovo-k-series.html
