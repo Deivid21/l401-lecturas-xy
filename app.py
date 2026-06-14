@@ -35,13 +35,29 @@ def leer_sensor():
         print("ERROR:", e)
         return 0, 0  # Valores por defecto en caso de error
 
-@app.route('/')
+def obtener_cuadrante(x, y):
+    if x > 0 and y > 0:
+        return "Q1"
+    elif x < 0 and y > 0:
+        return "Q2"
+    elif x < 0 and y < 0:
+        return "Q3"
+    elif x > 0 and y < 0:
+        return "Q4"
+    else:
+        return "Eje"
+
+@app.route("/")
 def index():
-    ejeY, ejeX = leer_sensor() #órden ejes.
+    ejeX, ejeY = leer_sensor()
+    cuadrante = obtener_cuadrante(ejeX, ejeY)
+
     return render_template(
-        'index.html',
+        "index.html",
         ejeX=ejeX,
-        ejeY=ejeY
+        ejeY=ejeY,
+        cuadrante=cuadrante
     )
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
