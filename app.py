@@ -95,6 +95,10 @@ def moto_s():
 def moto_x():
     return render_template("devices/moto-x.html")
 
+@app.route("/devices/moto-z")
+def moto_z():
+    return render_template("devices/moto-z.html")
+
 @app.route("/devices/one")
 def one():
     return render_template("devices/one.html")

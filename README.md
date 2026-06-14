@@ -100,6 +100,7 @@ La estructura base del proyecto es la siguiente:
     │   ├── moto-p.html
     │   ├── moto-s.html
     │   ├── moto-x.html
+    │   ├── moto-z.html
     │   └── one.html
     └── index.html
 ```
@@ -206,6 +207,7 @@ Desde esta página se puede acceder a distintas familias de dispositivos:
 - Moto E
 - Moto G
 - Moto X
+- Moto Z
 - Moto S
 - Motorola Edge
 - Motorola Defy
