@@ -1,107 +1,173 @@
 # Actividad Base: Flask + DataXY
 
-Este repositorio es un ejemplo inicial para practicar con **Flask** y **GitHub**.
-La intensión es que los estudiantes lo usen como punto de partida, lo modifiquen y luego lo suban a su propio repositorio.
+Este proyecto es una actividad práctica para aprender a utilizar **Flask**, **HTML/CSS** y **GitHub**.
+La aplicación recibe datos de posición **X** e **Y** desde una aplicación móvil mediante conexión TCP y los muestra en una página web desarrollada con Flask.
 
 ---
 
-## Objetivo
+## Objetivo de la actividad
 
-* Clonar el repositorio y trabajar en una copia personal
-* Ejecutar Flask y recibir datos **x, y** desde una aplicación móvil
-* Visualizar datos en una página HTML sencilla
-* Subir cambios a GitHub
+El objetivo principal es modificar una aplicación base para crear una interfaz gráfica que permita visualizar datos enviados desde un dispositivo móvil.
+
+Durante la actividad se busca que el estudiante pueda:
+
+- Clonar un repositorio desde GitHub.
+- Ejecutar un servidor Flask en Python.
+- Recibir datos **X** e **Y** desde una aplicación móvil.
+- Mostrar los datos recibidos en una página HTML.
+- Personalizar la interfaz usando CSS.
+- Encender visualmente un cuadrante según la posición de los valores **X** e **Y**.
+- Subir la versión modificada a un repositorio propio en GitHub.
 
 ---
 
 ## Requisitos
 
-* Entorno para Python y Flask instalados
-* Cuenta en GitHub
-* Aplicación móvil (APK) para enviar datos
+Antes de ejecutar el proyecto, se debe contar con lo siguiente:
+
+- Python 3 instalado.
+- Flask instalado.
+- Una cuenta de GitHub.
+- Git instalado en el computador.
+- Un celular Android conectado a la misma red WiFi que el computador.
+- Aplicación móvil **XYaTCPfull.apk** para enviar los datos.
 
 ---
 
-## Descarga de Aplicación APK
+## Instalación de Flask
 
-Se puede descargar la aplicación móvil desde aquí:
+Si Flask no está instalado, se puede instalar con el siguiente comando:
+
+```bash
+pip install flask
+```
+
+En algunos sistemas puede ser necesario usar:
+
+```bash
+python3 -m pip install flask
+```
+
+---
+
+## Descarga de la aplicación móvil
+
+La aplicación móvil se encuentra dentro del proyecto:
+
+```text
+XYaTCPfull.apk
+```
+
+También puede descargarse desde el siguiente enlace dentro del repositorio:
 
 [Descargar XYaTCPfull.apk](./XYaTCPfull.apk)
 
+> Importante: el celular y el computador deben estar conectados a la misma red local para que la comunicación funcione correctamente.
+
 ---
 
-## Pasos básicos
+## Clonar el repositorio base
 
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/jotaefepece/Actividad-dataXY-base
-cd Actividad-dataXY-base
-```
-
-### 2. Instalar y ejecutar la aplicación apk
+Para descargar el proyecto inicial, ejecutar:
 
 ```bash
-### La red del celular tiene que estar en la misma red local ###
+git clone https://https://github.com/Deivid21/l401-lecturas-xy.git
+cd l401-lecturas-xy
 ```
 
-### 3. Ejecutar Flask
+---
+
+## Estructura del proyecto
+
+La estructura base del proyecto es la siguiente:
+
+```text
+.
+├── app.py
+├── README.md
+├── XYaTCPfull.apk
+├── screenshoots
+│   ├── archivos-base.png
+│   ├── device-view.png
+│   ├── ip-device.png
+│   └── vista-base.png
+└── templates
+    └── index.html
+```
+
+### Descripción de archivos principales
+
+| Archivo o carpeta | Descripción |
+|---|---|
+| `app.py` | Archivo principal del servidor Flask. Recibe los datos X e Y y los envía al HTML. |
+| `templates/index.html` | Página web que muestra los datos y la interfaz gráfica. |
+| `README.md` | Documento explicativo del proyecto. |
+| `XYaTCPfull.apk` | Aplicación Android utilizada para enviar los datos al servidor. |
+| `screenshoots/` | Carpeta para guardar imágenes del funcionamiento del proyecto. |
+
+---
+
+## Configuración del servidor
+
+En el archivo `app.py` se debe revisar la IP y el puerto utilizados para la comunicación:
+
+```python
+HOST = "10.190.224.152"
+PORT = 12345
+```
+
+El valor de `HOST` debe corresponder a la dirección IP del dispositivo, abra la aplicacion de este proyecto para ver su direccion IP.
+
+<img src="screenshoots/ip-device.png" alt="IP del dispositivo" width="400">
+
+---
+
+## Ejecutar el proyecto
+
+Para iniciar la aplicación Flask:
 
 ```bash
 python3 app.py
 ```
 
-### 4. Probar en el navegador
+Luego abrir el navegador y entrar a:
 
-```
+```text
 http://127.0.0.1:5000
 ```
 
 ---
 
-## Estructura del ejercicio
+## Funcionamiento esperado
 
-```bash
-.
-├── app.py
-├── capturas
-│   ├── archivos-base.png
-│   └── vista-base.png
-├── README.md
-├── templates
-│   └── index.html
-└── XYaTCPfull.apk
-```
+La aplicación debe recibir los valores **X** e **Y** enviados desde el celular y mostrarlos en una página web.
+
+Además, la interfaz debe indicar en qué cuadrante se encuentra la posición recibida:
+
+| Cuadrante | Condición |
+|---|---|
+| Q1 | X > 0 y Y > 0 |
+| Q2 | X < 0 y Y > 0 |
+| Q3 | X < 0 y Y < 0 |
+| Q4 | X > 0 y Y < 0 |
+| Eje | X = 0 o Y = 0 |
+
+La celda correspondiente debe cambiar de color para mostrar visualmente el cuadrante activo.
 
 ---
 
-## Capturas
+## Capturas del proyecto
 
 ### Estructura de archivos
 
-![Estructura de los archivos](capturas/archivos-base.png)
-
----
+<img src="screenshoots/archivos-base.png" alt="Estructura de los archivos" width="400">
 
 ### Vista en el navegador
 
-![Vista HTML](capturas/vista-base.png)
+<img src="screenshoots/vista-base.png" alt="Vista HTML" width="600">
 
----
+### Aplicación Android
 
-## Inicio del ejercicio
-
-Cada estudiante debe:
-
-* Crear una pestaña en Flask que muestre un dato recibido
-* Modificar el HTML para encender una celda en un rectángulo **2x2** según los valores **x, y**
-* Subir su versión modificada a su propio repositorio
-
----
-
-## Notas
-
-* Este README es solo una guía básica.
-* El trabajo final depende de cada estudiante y de cómo adapte el ejercicio.
+<img src="screenshoots/device-view.png" alt="Aplicacion Android" width="500">
 
 ---
