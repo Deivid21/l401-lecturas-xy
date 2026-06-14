@@ -87,7 +87,6 @@ La estructura base del proyecto es la siguiente:
 ├── README.md
 ├── XYaTCPfull.apk
 ├── screenshoots
-│   ├── archivos-base.png
 │   ├── device-view.png
 │   ├── ip-device.png
 │   └── vista-base.png
@@ -157,10 +156,6 @@ La celda correspondiente debe cambiar de color para mostrar visualmente el cuadr
 ---
 
 ## Capturas del proyecto
-
-### Estructura de archivos
-
-<img src="screenshoots/archivos-base.png" alt="Estructura de los archivos" width="400">
 
 ### Vista en el navegador
 
