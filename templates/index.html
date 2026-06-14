@@ -1,65 +1,123 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
- <meta http-equiv="refresh" content="2"></meta>
-<style>
-	#tabla{border-collapse:collapse;
-		}
-	#q1,#q2,#q3,#q4{	/*Varios id con mismas características*/
-		width:100px;
-		height:100px;
-		border:1px solid black;
-		text-align:center;
-		}
-	#q1{background-color:	/*Cuadrante 1*/
-		{% if ejeX > 0 and ejeY > 0 %}
-			lightblue;
-		{% else %}
-			gray;
-		{% endif %}
-		}
-	#q2{background-color:	/*Cuadrante 2*/
-		{% if ejeX > 0 and ejeY < 0 %}
-			lightblue;
-		{% else %}
-			gray;
-		{% endif %}
-		}
-	#q3{background-color:	/*Cuadrante 3*/
-		{% if ejeX < 0 and ejeY > 0 %}
-			lightblue;
-		{% else %}
-			gray;
-		{% endif %}
-		}
-	#q4{background-color:	/*Cuadrante 4*/
-		{% if ejeX < 0 and ejeY < 0 %}
-			lightblue;
-		{% else %}
-			gray;
-		{% endif %}
-		}
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Posición XY</title>
 
+    <style>
+        body {
+            margin: 0;
+            background-color: #eef2f7;
+            font-family: Arial, sans-serif;
+            color: #263238;
+            text-align: center;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 760px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        h1 {
+            color: #0d47a1;
+            margin-bottom: 5px;
+        }
+
+        .datos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .dato {
+            width: 160px;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border: 2px solid #1565c0;
+            border-radius: 12px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .estado {
+            display: inline-block;
+            background-color: #263238;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        #tabla {
+            border-collapse: separate;
+            border-spacing: 12px;
+            margin: auto;
+        }
+
+        #q1, #q2, #q3, #q4 {
+            width: 140px;
+            height: 110px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border: 2px solid #455a64;
+            background-color: #cfd8dc;
+            color: #37474f;
+            box-shadow: 2px 2px 6px gray;
+        }
+
+        .activo {
+            background-color: #4fc3f7 !important;
+            color: #01579b !important;
+            border: 3px solid #0277bd !important;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
+
 <body>
+    <div class="contenedor">
+        <h1>Posición XY</h1>
 
-<h1>Posición XY</h1>
+        <div class="datos">
+            <div class="dato">X = {{ ejeX }}</div>
+            <div class="dato">Y = {{ ejeY }}</div>
+        </div>
 
-<p>X = {{ ejeX }}</p>
-<p>Y = {{ ejeY }}</p>
+        <div class="estado">
+            Cuadrante actual: {{ cuadrante }}
+        </div>
 
-<table id="tabla">
-<tr id="cuadros">
-    <td id="q1">Q1</td>
-    <td id="q2">Q2</td>
-</tr>
-<tr>
-    <td id="q3">Q3</td>
-    <td id="q4">Q4</td>
-</tr>
-</table>
+        <table id="tabla">
+            <tr>
+                <td id="q2" class="{% if cuadrante == 'Q2' %}activo{% endif %}">
+                    Q2
+                </td>
+                <td id="q1" class="{% if cuadrante == 'Q1' %}activo{% endif %}">
+                    Q1
+                </td>
+            </tr>
 
+            <tr>
+                <td id="q3" class="{% if cuadrante == 'Q3' %}activo{% endif %}">
+                    Q3
+                </td>
+                <td id="q4" class="{% if cuadrante == 'Q4' %}activo{% endif %}">
+                    Q4
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
