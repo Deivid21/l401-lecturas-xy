@@ -87,9 +87,12 @@ La estructura base del proyecto es la siguiente:
 ├── resources
 │   └── XYaTCPfull.apk
 ├── screenshoots
+│   ├── base.png
+│   ├── coming-soon.png
+│   ├── devices.png
 │   ├── device-view.png
 │   ├── ip-device.png
-│   └── vista-base.png
+│   └── moto-g.png
 └── templates
     ├── device.html
     ├── devices
@@ -177,7 +180,7 @@ La celda correspondiente debe cambiar de color para mostrar visualmente el cuadr
 
 ### Vista en el navegador
 
-<img src="screenshoots/vista-base.png" alt="Vista HTML" width="600">
+<img src="screenshoots/base.png" alt="Vista HTML" width="600">
 
 ### Aplicación Android
 
@@ -185,7 +188,7 @@ La celda correspondiente debe cambiar de color para mostrar visualmente el cuadr
 
 ---
 
-## Extra agregado: acceso a LineageOS para dispositivos Motorola
+## Parte 2: Acceso a Custom Roms para dispositivos Motorola
 
 Como mejora adicional al proyecto base, se agregó una nueva sección dentro de la aplicación Flask para mostrar accesos a distintas familias de dispositivos Motorola relacionados con Android y LineageOS.
 
@@ -240,3 +243,18 @@ http://127.0.0.1:5000/devices
 
 ---
 
+## Capturas del proyecto - Parte 2
+
+### Lista de Dispositivos Android
+
+<img src="screenshoots/devices.png" alt="Lista de Dispositivos Android" width="500">
+
+### Lista de Dispositivos Proximamente
+
+<img src="screenshoots/coming-soon.png" alt="Moto G" width="500">
+
+### Lista de Dispositivos Motorola Moto G
+
+<img src="screenshoots/moto-g.png" alt="Moto G" width="600">
+
+---
