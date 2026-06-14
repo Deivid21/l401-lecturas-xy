@@ -1,7 +1,10 @@
-# Actividad Base: Flask + DataXY
+# Actividad Flask + DataXY
 
-Este proyecto es una actividad práctica para aprender a utilizar **Flask**, **HTML/CSS** y **GitHub**.
-La aplicación recibe datos de posición **X** e **Y** desde una aplicación móvil mediante conexión TCP y los muestra en una página web desarrollada con Flask.
+Este proyecto corresponde a una actividad práctica para aprender a utilizar **Flask**, **HTML/CSS** y **GitHub**.
+
+La aplicación recibe datos de posición **X** e **Y** desde una aplicación móvil Android mediante una conexión **TCP**. Luego, estos datos son procesados por Flask y mostrados en una página web con una interfaz visual tipo dashboard.
+
+Además, como mejora extra, se agregó una sección de acceso a información de **LineageOS para distintas familias de dispositivos Motorola**, aplicando lo aprendido en la primera parte del proyecto.
 
 ---
 
@@ -17,6 +20,8 @@ Durante la actividad se busca que el estudiante pueda:
 - Mostrar los datos recibidos en una página HTML.
 - Personalizar la interfaz usando CSS.
 - Encender visualmente un cuadrante según la posición de los valores **X** e **Y**.
+- Agregar nuevas rutas y páginas HTML dentro del proyecto Flask.
+- Crear una sección extra con acceso a familias de dispositivos Motorola relacionadas con LineageOS.
 - Subir la versión modificada a un repositorio propio en GitHub.
 
 ---
@@ -52,17 +57,11 @@ python3 -m pip install flask
 
 ## Descarga de la aplicación móvil
 
-La aplicación móvil se encuentra dentro del proyecto:
-
-```text
-XYaTCPfull.apk
-```
-
-También puede descargarse desde el siguiente enlace:
+Descarga directa del siguiente enlace:
 
 [Descargar XYaTCPfull.apk](https://github.com/Deivid21/l401-lecturas-xy/raw/refs/heads/main/resources/XYaTCPfull.apk)
 
-> Importante: el celular y el computador deben estar conectados a la misma red local para que la comunicación funcione correctamente.
+> **Importante:** el celular y el computador deben estar conectados a la misma red local para que la comunicación funcione correctamente.
 
 ---
 
@@ -82,28 +81,43 @@ cd l401-lecturas-xy
 La estructura base del proyecto es la siguiente:
 
 ```text
-.
 ├── app.py
 ├── README.md
 ├── resources
-│   ├── XYaTCPfull.apk
+│   └── XYaTCPfull.apk
 ├── screenshoots
-│   ├── device-view.png
-│   ├── ip-device.png
-│   └── vista-base.png
+│   ├── device-view.png
+│   ├── ip-device.png
+│   └── vista-base.png
 └── templates
+    ├── device.html
+    ├── devices
+    │   ├── defy.html
+    │   ├── edge.html
+    │   ├── lenovo-k-series.html
+    │   ├── moto-e.html
+    │   ├── moto-g.html
+    │   ├── moto-p.html
+    │   ├── moto-s.html
+    │   ├── moto-x.html
+    │   └── one.html
     └── index.html
 ```
 
-### Descripción de archivos principales
+## Descripción de archivos y carpetas principales
 
 | Archivo o carpeta | Descripción |
 |---|---|
-| `app.py` | Archivo principal del servidor Flask. Recibe los datos X e Y y los envía al HTML. |
-| `templates/index.html` | Página web que muestra los datos y la interfaz gráfica. |
+| `app.py` | Archivo principal del servidor Flask. Recibe los datos X e Y, calcula el cuadrante activo y renderiza las páginas HTML. |
 | `README.md` | Documento explicativo del proyecto. |
-| `resources/XYaTCPfull.apk` | Aplicación Android utilizada para enviar los datos al servidor. |
-| `screenshoots/` | Carpeta para guardar imágenes del funcionamiento del proyecto. |
+| `resources/` | Carpeta utilizada para guardar recursos descargables del proyecto. |
+| `resources/XYaTCPfull.apk` | Aplicación Android utilizada para enviar los datos X e Y al servidor. |
+| `screenshoots/` | Carpeta utilizada para guardar capturas del funcionamiento del proyecto. |
+| `templates/index.html` | Página principal del dashboard XY. |
+| `templates/device.html` | Página principal de selección de familias de dispositivos Android. |
+| `templates/devices/` | Carpeta que contiene una página HTML independiente para cada familia de dispositivos. |
+
+> Nota: la carpeta `screenshoots` mantiene ese nombre porque así está definida dentro del proyecto. Si se cambia a `screenshots`, también se deben actualizar las rutas de las imágenes en el README y en el código.
 
 ---
 
@@ -138,7 +152,7 @@ http://127.0.0.1:5000
 
 ---
 
-## Funcionamiento esperado
+## Funcionamiento esperado - Parte 1
 
 La aplicación debe recibir los valores **X** e **Y** enviados desde el celular y mostrarlos en una página web.
 
@@ -156,7 +170,7 @@ La celda correspondiente debe cambiar de color para mostrar visualmente el cuadr
 
 ---
 
-## Capturas del proyecto
+## Capturas del proyecto - Parte 1
 
 ### Vista en el navegador
 
@@ -167,3 +181,58 @@ La celda correspondiente debe cambiar de color para mostrar visualmente el cuadr
 <img src="screenshoots/device-view.png" alt="Aplicacion Android" width="500">
 
 ---
+
+## Extra agregado: acceso a LineageOS para dispositivos Motorola
+
+Como mejora adicional al proyecto base, se agregó una nueva sección dentro de la aplicación Flask para mostrar accesos a distintas familias de dispositivos Motorola relacionados con Android y LineageOS.
+
+Esta sección utiliza lo aprendido en la primera parte del proyecto, aplicando:
+
+- Creación de nuevas rutas en Flask.
+- Uso de nuevas páginas HTML.
+- Navegación mediante botones.
+- Organización de archivos dentro de `templates`.
+- Uso de imágenes guardadas dentro del mismo repositorio.
+- Personalización visual con CSS.
+
+La página principal de esta sección se encuentra en:
+
+```text
+templates/device.html
+```
+
+Desde esta página se puede acceder a distintas familias de dispositivos:
+
+- Moto E
+- Moto G
+- Moto X
+- Moto S
+- Motorola Edge
+- Motorola Defy
+- Motorola One
+- Moto P
+- Lenovo K Series
+
+Cada botón dirige a una página HTML independiente ubicada dentro de la carpeta:
+
+```text
+templates/devices/
+```
+
+Por ejemplo:
+
+```text
+templates/devices/moto-e.html
+templates/devices/moto-g.html
+templates/devices/moto-x.html
+templates/devices/edge.html
+```
+
+La ruta principal para entrar a esta sección es:
+
+```text
+http://127.0.0.1:5000/devices
+```
+
+---
+

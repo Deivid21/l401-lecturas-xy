@@ -83,6 +83,30 @@
             border: 3px solid #0277bd !important;
             transform: scale(1.05);
         }
+
+		.boton-devices {
+			display: inline-block;
+			margin-top: 30px;
+			padding: 14px 28px;
+			background: linear-gradient(135deg, #1565c0, #00acc1);
+			color: white;
+			text-decoration: none;
+			font-size: 18px;
+			font-weight: bold;
+			border-radius: 30px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+			transition: 0.3s;
+		}
+
+		.boton-devices:hover {
+			background: linear-gradient(135deg, #0d47a1, #00838f);
+			transform: scale(1.05);
+		}
+
+		.boton-devices span {
+			margin-right: 8px;
+		}
+
     </style>
 </head>
 
@@ -118,6 +142,10 @@
                 </td>
             </tr>
         </table>
+    </div>
+        <a class="boton-devices" href="/devices">
+            <span>📱</span> Ver dispositivos Android
+        </a>
     </div>
 </body>
 </html>

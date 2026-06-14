@@ -59,5 +59,45 @@ def index():
         cuadrante=cuadrante
     )
 
+@app.route("/devices")
+def devices():
+    return render_template("device.html")
+
+@app.route("/devices/defy")
+def defy():
+    return render_template("devices/defy.html")
+
+@app.route("/devices/edge")
+def edge():
+    return render_template("devices/edge.html")
+
+@app.route("/devices/lenovo-k-series")
+def lenovo_k_series():
+    return render_template("devices/lenovo-k-series.html")
+
+@app.route("/devices/moto-e")
+def moto_e():
+    return render_template("devices/moto-e.html")
+
+@app.route("/devices/moto-g")
+def moto_g():
+    return render_template("devices/moto-g.html")
+
+@app.route("/devices/moto-p")
+def moto_p():
+    return render_template("devices/moto-p.html")
+
+@app.route("/devices/moto-s")
+def moto_s():
+    return render_template("devices/moto-s.html")
+
+@app.route("/devices/moto-x")
+def moto_x():
+    return render_template("devices/moto-x.html")
+
+@app.route("/devices/one")
+def one():
+    return render_template("devices/one.html")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

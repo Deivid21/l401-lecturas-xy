@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispositivos Android</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #eef2f7;
+            font-family: Arial, sans-serif;
+            color: #263238;
+            text-align: center;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        h1 {
+            color: #0d47a1;
+            margin-bottom: 10px;
+        }
+
+        .descripcion {
+            color: #546e7a;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .botones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 18px;
+        }
+
+        .boton-serie {
+            display: block;
+            position: relative;
+            text-decoration: none;
+            background-color: #ffffff;
+            color: #263238;
+            padding: 20px 15px;
+            border-radius: 14px;
+            font-size: 20px;
+            font-weight: bold;
+            border: 2px solid #d6e0ea;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+            transition: 0.3s;
+            overflow: hidden;
+        }
+
+        .boton-serie::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 8px;
+            height: 100%;
+            background-color: #1565c0;
+        }
+
+        .boton-serie:hover {
+            background-color: #e3f2fd;
+            border-color: #1565c0;
+            color: #0d47a1;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.20);
+        }
+
+        .moto-e::before {
+            background-color: #2e7d32;
+        }
+
+        .moto-g::before {
+            background-color: #1565c0;
+        }
+
+        .moto-x::before {
+            background-color: #6a1b9a;
+        }
+
+        .moto-s::before {
+            background-color: #ef6c00;
+        }
+
+        .edge::before {
+            background-color: #00838f;
+        }
+
+        .defy::before {
+            background-color: #455a64;
+        }
+
+        .one::before {
+            background-color: #c62828;
+        }
+
+        .moto-p::before {
+            background-color: #ad1457;
+        }
+
+        .lenovo-k::before {
+            background-color: #b71c1c;
+        }
+
+        .volver {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 12px 24px;
+            background-color: #263238;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+        }
+
+        .volver:hover {
+            background-color: #0d47a1;
+            transform: scale(1.04);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <h1>Lista de Dispositivos Android</h1>
+
+        <p class="descripcion">
+            Selecciona una familia de dispositivos para ver los modelos compatibles.
+        </p>
+
+        <div class="botones">
+            <a class="boton-serie defy" href="/devices/defy">Defy</a>
+            <a class="boton-serie edge" href="/devices/edge">Edge</a>
+            <a class="boton-serie lenovo-k" href="/devices/lenovo-k-series">Lenovo K Series</a>
+            <a class="boton-serie moto-e" href="/devices/moto-e">Moto E</a>
+            <a class="boton-serie moto-g" href="/devices/moto-g">Moto G</a>
+            <a class="boton-serie moto-p" href="/devices/moto-p">Moto P</a>
+            <a class="boton-serie moto-s" href="/devices/moto-s">Moto S</a>
+            <a class="boton-serie moto-x" href="/devices/moto-x">Moto X</a>
+            <a class="boton-serie one" href="/devices/one">One</a>
+        </div>
+
+        <a class="volver" href="/">Volver al Dashboard XY</a>
+    </div>
+</body>
+</html>
