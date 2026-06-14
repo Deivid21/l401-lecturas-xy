@@ -1,23 +1,39 @@
 from flask import Flask, render_template
 import socket
+import re
+
 app = Flask(__name__)
-HOST = "172.20.10.2"	## Ip del servidor
-PORT = 12345			## Puerto del servidor
+
+HOST = "10.190.224.152"  # IP del servidor del sensor
+PORT = 12345              # Puerto del servidor
+TIMEOUT = 2               # Tiempo máximo de espera en segundos
 
 def leer_sensor():
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.settimeout(TIMEOUT)
             s.connect((HOST, PORT))
+
             data = s.recv(1024).decode().strip()
             print("RECIBIDO:", data)
-            ejeX, ejeY = data.split(',')
-            ejeX = float(ejeX.replace('X:', ''))
-            ejeY = float(ejeY.replace('Y:', ''))
+
+            # Formato esperado: X:12.5,Y:-3.2
+            match = re.search(
+                r"X:\s*(-?\d+(?:\.\d+)?),\s*Y:\s*(-?\d+(?:\.\d+)?)",
+                data
+            )
+
+            if not match:
+                raise ValueError("Formato incorrecto. Se esperaba: X:valor,Y:valor")
+
+            ejeX = float(match.group(1))
+            ejeY = float(match.group(2))
+
             return ejeX, ejeY
 
     except Exception as e:
         print("ERROR:", e)
-        return 0, 0
+        return 0, 0  # Valores por defecto en caso de error
 
 @app.route('/')
 def index():
@@ -29,4 +45,3 @@ def index():
     )
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
- 
