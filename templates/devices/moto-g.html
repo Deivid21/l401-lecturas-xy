@@ -81,6 +81,16 @@
             padding: 8px 16px;
             border-radius: 20px;
             font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .platform {
+            display: inline-block;
+            background-color: #455a64;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
@@ -141,27 +151,28 @@
 
 <body>
     {% set dispositivos = [
-        {"nombre": "Moto G6 Plus", "codename": "evert"},
-        {"nombre": "Moto G7", "codename": "river"},
-        {"nombre": "Moto G7 Play", "codename": "channel"},
-        {"nombre": "Moto G7 Plus", "codename": "lake"},
-        {"nombre": "Moto G7 Power", "codename": "ocean"},
-        {"nombre": "Moto G9 Play / Moto G9", "codename": "guamp"},
-        {"nombre": "Moto G9 Power", "codename": "cebu"},
-        {"nombre": "Moto G 5G", "codename": "kiev"},
-        {"nombre": "Moto G Power 2021", "codename": "borneo"},
-        {"nombre": "Moto G10 / Moto G10 Power", "codename": "capri"},
-        {"nombre": "Moto G30", "codename": "caprip"},
-        {"nombre": "Moto G Stylus 5G", "codename": "denver"},
-        {"nombre": "Moto G100", "codename": "nio"},
-        {"nombre": "Moto G200 5G", "codename": "xpeng"},
-        {"nombre": "Moto G Stylus 5G - 2022", "codename": "milanf"},
-        {"nombre": "Moto G52", "codename": "rhode"},
-        {"nombre": "Moto G82 5G / Moto G71s", "codename": "rhodep"},
-        {"nombre": "Moto G32", "codename": "devon"},
-        {"nombre": "Moto G84 5G", "codename": "bangkk"},
-        {"nombre": "Moto G34 5G / Moto G45 5G", "codename": "fogos"},
-        {"nombre": "Moto G 5G - 2024", "codename": "fogo"}
+        {"nombre": "Moto G6 Plus", "codename": "evert", "platform": "SDM630"},
+        {"nombre": "Moto G7", "codename": "river", "platform": "SDM632"},
+        {"nombre": "Moto G7 Play", "codename": "channel", "platform": "SDM632"},
+        {"nombre": "Moto G7 Plus", "codename": "lake", "platform": "SDM636"},
+        {"nombre": "Moto G7 Power", "codename": "ocean", "platform": "SDM632"},
+        {"nombre": "Moto G9 Play / Moto G9", "codename": "guamp", "platform": "SM6115"},
+        {"nombre": "Moto G9 Power", "codename": "cebu", "platform": "SM6115"},
+        {"nombre": "Moto G 5G", "codename": "kiev", "platform": "SM7225"},
+        {"nombre": "Moto G Power 2021", "codename": "borneo", "platform": "SM6115"},
+        {"nombre": "Moto G10 / Moto G10 Power", "codename": "capri", "platform": "SM4250"},
+        {"nombre": "Moto G30", "codename": "caprip", "platform": "SM6115"},
+        {"nombre": "Moto G Stylus 5G", "codename": "denver", "platform": "SM4350"},
+        {"nombre": "Moto G100", "codename": "nio", "platform": "SM8250"},
+        {"nombre": "Moto G200 5G", "codename": "xpeng", "platform": "SM8350"},
+        {"nombre": "Moto G Stylus 5G - 2022", "codename": "milanf", "platform": "SM6375"},
+        {"nombre": "Moto G52", "codename": "rhode", "platform": "SM6225"},
+        {"nombre": "Moto G82 5G / Moto G71s", "codename": "rhodep", "platform": "SM6375"},
+        {"nombre": "Moto G42", "codename": "hawao", "platform": "SM6225"},
+        {"nombre": "Moto G32", "codename": "devon", "platform": "SM6225"},
+        {"nombre": "Moto G84 5G", "codename": "bangkk", "platform": "SM6375"},
+        {"nombre": "Moto G34 5G / Moto G45 5G", "codename": "fogos", "platform": "SM6375"},
+        {"nombre": "Moto G 5G - 2024", "codename": "fogo", "platform": "SM4375"}
     ] %}
 
     <div class="contenedor">
@@ -186,6 +197,14 @@
                 <div class="codename">
                     Codename: {{ dispositivo.codename }}
                 </div>
+
+                {% if dispositivo.platform %}
+                <br>
+
+                <div class="platform">
+                    Platform: {{ dispositivo.platform }}
+                </div>
+                {% endif %}
 
                 <div class="acciones-rom">
                     <a

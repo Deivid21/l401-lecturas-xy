@@ -83,6 +83,16 @@
             padding: 8px 16px;
             border-radius: 20px;
             font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .platform {
+            display: inline-block;
+            background-color: #455a64;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
             margin-bottom: 18px;
         }
 
@@ -117,25 +127,25 @@
 
 <body>
     {% set motorola_one = [
-        {"nombre": "Motorola One", "codename": "deen"},
-        {"nombre": "Motorola One Hyper", "codename": "def"},
-        {"nombre": "Motorola One Fusion", "codename": "astro"}
+        {"nombre": "Motorola One", "codename": "deen", "platform": "MSM8953"},
+        {"nombre": "Motorola One Hyper", "codename": "def", "platform": "SM6150"},
+        {"nombre": "Motorola One Fusion", "codename": "astro", "platform": "SDM710"}
     ] %}
 
     {% set moto_g = [
-        {"nombre": "Moto G8 Plus", "codename": "doha"},
-        {"nombre": "Moto G8 Power", "codename": "sofiar"},
-        {"nombre": "Moto G Stylus / Moto G Pro", "codename": "sofiap"},
-        {"nombre": "Moto G9 Plus", "codename": "odessa"},
-        {"nombre": "Moto G60 / Moto G40 Fusion", "codename": "hanoip"},
-        {"nombre": "Moto G71 5G", "codename": "corfur"},
-        {"nombre": "Moto G51 5G", "codename": "cypfq"},
-        {"nombre": "Moto G53 5G", "codename": "penang"}
+        {"nombre": "Moto G8 Plus", "codename": "doha", "platform": "SM6125"},
+        {"nombre": "Moto G8 Power", "codename": "sofiar", "platform": "SM6125"},
+        {"nombre": "Moto G Stylus / Moto G Pro", "codename": "sofiap", "platform": "SM6125"},
+        {"nombre": "Moto G9 Plus", "codename": "odessa", "platform": "SM7150"},
+        {"nombre": "Moto G60 / Moto G40 Fusion", "codename": "hanoip", "platform": "SM7150"},
+        {"nombre": "Moto G71 5G", "codename": "corfur", "platform": "SM6375"},
+        {"nombre": "Moto G51 5G", "codename": "cypfq", "platform": "SM4350"},
+        {"nombre": "Moto G53 5G", "codename": "penang", "platform": "SM4350"}
     ] %}
 
     {% set edge = [
-        {"nombre": "Motorola Edge 30 Pro", "codename": "hiphi"},
-        {"nombre": "Motorola Edge 50 Fusion", "codename": "cusco"}
+        {"nombre": "Motorola Edge 30 Pro", "codename": "hiphi", "platform": "SM8450"},
+        {"nombre": "Motorola Edge 50 Fusion", "codename": "cusco", "platform": "SM6450"}
     ] %}
 
     <div class="contenedor">
@@ -158,6 +168,12 @@
                     Codename: {{ dispositivo.codename }}
                 </div>
 
+                <br>
+
+                <div class="platform">
+                    Platform: {{ dispositivo.platform }}
+                </div>
+
                 <span class="estado">
                     Próximamente
                 </span>
@@ -178,6 +194,12 @@
                     Codename: {{ dispositivo.codename }}
                 </div>
 
+                <br>
+
+                <div class="platform">
+                    Platform: {{ dispositivo.platform }}
+                </div>
+
                 <span class="estado">
                     Próximamente
                 </span>
@@ -196,6 +218,12 @@
 
                 <div class="codename">
                     Codename: {{ dispositivo.codename }}
+                </div>
+
+                <br>
+
+                <div class="platform">
+                    Platform: {{ dispositivo.platform }}
                 </div>
 
                 <span class="estado">

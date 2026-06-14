@@ -81,6 +81,16 @@
             padding: 8px 16px;
             border-radius: 20px;
             font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .platform {
+            display: inline-block;
+            background-color: #455a64;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
@@ -141,9 +151,9 @@
 
 <body>
     {% set dispositivos = [
-        {"nombre": "One Action", "codename": "troika"},
-        {"nombre": "One Vision", "codename": "kane"},
-        {"nombre": "One 5G Ace", "codename": "kiev"}
+        {"nombre": "One Action", "codename": "troika", "platform": "EXYNOS9609"},
+        {"nombre": "One Vision", "codename": "kane", "platform": "EXYNOS9609"},
+        {"nombre": "One 5G Ace", "codename": "kiev", "platform": "SM7225"}
     ] %}
 
     <div class="contenedor">
@@ -167,6 +177,12 @@
 
                 <div class="codename">
                     Codename: {{ dispositivo.codename }}
+                </div>
+
+                <br>
+
+                <div class="platform">
+                    Platform: {{ dispositivo.platform }}
                 </div>
 
                 <div class="acciones-rom">

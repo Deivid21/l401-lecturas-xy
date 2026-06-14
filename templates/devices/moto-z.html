@@ -81,6 +81,16 @@
             padding: 8px 16px;
             border-radius: 20px;
             font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .platform {
+            display: inline-block;
+            background-color: #455a64;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
@@ -141,8 +151,8 @@
 
 <body>
     {% set dispositivos = [
-        {"nombre": "Moto Z2 Force / Moto Z (2018)", "codename": "nash"},
-        {"nombre": "Moto Z3 Play", "codename": "beckham"}
+        {"nombre": "Moto Z2 Force / Moto Z (2018)", "codename": "nash", "platform": "MSM8998"},
+        {"nombre": "Moto Z3 Play", "codename": "beckham", "platform": "SDM636"}
     ] %}
 
     <div class="contenedor">
@@ -166,6 +176,12 @@
 
                 <div class="codename">
                     Codename: {{ dispositivo.codename }}
+                </div>
+
+                <br>
+
+                <div class="platform">
+                    Platform: {{ dispositivo.platform }}
                 </div>
 
                 <div class="acciones-rom">
