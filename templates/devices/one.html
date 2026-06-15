@@ -16,7 +16,7 @@
 
         .contenedor {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 40px auto;
             background-color: white;
             padding: 30px;
@@ -58,7 +58,7 @@
 
         .imagen-dispositivo {
             width: 150px;
-            height: 190px;
+            height: auto;
             object-fit: contain;
             margin-bottom: 18px;
         }
@@ -146,6 +146,7 @@
             background-color: #263238;
             transform: scale(1.04);
         }
+
     </style>
 </head>
 
@@ -153,6 +154,7 @@
     {% set dispositivos = [
         {"nombre": "One Action", "codename": "troika", "platform": "EXYNOS9609"},
         {"nombre": "One Vision", "codename": "kane", "platform": "EXYNOS9609"},
+        {"nombre": "One 5G", "codename": "nairo", "platform": "SM7250"},
         {"nombre": "One 5G Ace", "codename": "kiev", "platform": "SM7225"}
     ] %}
 
@@ -179,11 +181,13 @@
                     Codename: {{ dispositivo.codename }}
                 </div>
 
+                {% if dispositivo.platform %}
                 <br>
 
                 <div class="platform">
                     Platform: {{ dispositivo.platform }}
                 </div>
+                {% endif %}
 
                 <div class="acciones-rom">
                     <a

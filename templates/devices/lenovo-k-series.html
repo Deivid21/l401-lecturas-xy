@@ -16,7 +16,7 @@
 
         .contenedor {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 40px auto;
             background-color: white;
             padding: 30px;
@@ -59,6 +59,7 @@
         .imagen-dispositivo {
             width: 150px;
             height: auto;
+            object-fit: contain;
             margin-bottom: 18px;
         }
 
@@ -67,6 +68,10 @@
             font-weight: bold;
             color: #263238;
             margin-bottom: 8px;
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .codename {
@@ -141,10 +146,19 @@
             background-color: #263238;
             transform: scale(1.04);
         }
+
     </style>
 </head>
 
 <body>
+    {% set dispositivos = [
+        {"nombre": "K12", "codename": "guam", "platform": "SM4250"},
+        {"nombre": "K12 Note", "codename": "guamp", "platform": "SM6115"},
+        {"nombre": "K12 Pro", "codename": "cebu", "platform": "SM6115"},
+        {"nombre": "K13 Note", "codename": "capri", "platform": "SM4250"},
+        {"nombre": "K13 Pro", "codename": "caprip", "platform": "SM6115"}
+    ] %}
+
     <div class="contenedor">
         <h1>Lenovo K Series</h1>
 
@@ -153,31 +167,33 @@
         </p>
 
         <div class="grid-dispositivos">
-
+            {% for dispositivo in dispositivos %}
             <div class="tarjeta">
                 <img
                     class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/guam.png"
-                    alt="Lenovo K12">
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/{{ dispositivo.codename }}.png"
+                    alt="{{ dispositivo.nombre }}">
 
                 <div class="nombre">
-                    Lenovo K12
+                    {{ dispositivo.nombre }}
                 </div>
 
                 <div class="codename">
-                    Codename: guam
+                    Codename: {{ dispositivo.codename }}
                 </div>
 
+                {% if dispositivo.platform %}
                 <br>
 
                 <div class="platform">
-                    Platform: SM4250
+                    Platform: {{ dispositivo.platform }}
                 </div>
+                {% endif %}
 
                 <div class="acciones-rom">
                     <a
                         class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/guam/variant2/"
+                        href="https://wiki.lineageos.org/devices/{{ dispositivo.codename }}/"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en LineageOS
@@ -185,169 +201,14 @@
 
                     <a
                         class="boton-evolution"
-                        href="https://evolution-x.org/devices/guam"
+                        href="https://evolution-x.org/devices/{{ dispositivo.codename }}"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en Evolution X
                     </a>
                 </div>
             </div>
-
-            <div class="tarjeta">
-                <img
-                    class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/guamp.png"
-                    alt="Lenovo K12 Note">
-
-                <div class="nombre">
-                    Lenovo K12 Note
-                </div>
-
-                <div class="codename">
-                    Codename: guamp
-                </div>
-
-                <br>
-
-                <div class="platform">
-                    Platform: SM6115
-                </div>
-
-                <div class="acciones-rom">
-                    <a
-                        class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/guamp/variant3/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en LineageOS
-                    </a>
-
-                    <a
-                        class="boton-evolution"
-                        href="https://evolution-x.org/devices/guamp"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en Evolution X
-                    </a>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <img
-                    class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/cebu.png"
-                    alt="Lenovo K12 Pro">
-
-                <div class="nombre">
-                    Lenovo K12 Pro
-                </div>
-
-                <div class="codename">
-                    Codename: cebu
-                </div>
-
-                <br>
-
-                <div class="platform">
-                    Platform: SM6115
-                </div>
-
-                <div class="acciones-rom">
-                    <a
-                        class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/cebu/variant2/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en LineageOS
-                    </a>
-
-                    <a
-                        class="boton-evolution"
-                        href="https://evolution-x.org/devices/cebu"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en Evolution X
-                    </a>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <img
-                    class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/capri.png"
-                    alt="Lenovo K13 Note">
-
-                <div class="nombre">
-                    Lenovo K13 Note
-                </div>
-
-                <div class="codename">
-                    Codename: capri
-                </div>
-
-                <br>
-
-                <div class="platform">
-                    Platform: SM4250
-                </div>
-
-                <div class="acciones-rom">
-                    <a
-                        class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/capri/variant3/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en LineageOS
-                    </a>
-
-                    <a
-                        class="boton-evolution"
-                        href="https://evolution-x.org/devices/capri"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en Evolution X
-                    </a>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <img
-                    class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/caprip.png"
-                    alt="Lenovo K13 Pro">
-
-                <div class="nombre">
-                    Lenovo K13 Pro
-                </div>
-
-                <div class="codename">
-                    Codename: caprip
-                </div>
-
-                <br>
-
-                <div class="platform">
-                    Platform: SM6115
-                </div>
-
-                <div class="acciones-rom">
-                    <a
-                        class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/caprip/variant2/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en LineageOS
-                    </a>
-
-                    <a
-                        class="boton-evolution"
-                        href="https://evolution-x.org/devices/caprip"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en Evolution X
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <a class="volver" href="/devices">Volver a dispositivos</a>

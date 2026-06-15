@@ -25,7 +25,7 @@
         }
 
         h1 {
-            color: #1565c0;
+            color: #424242;
             margin-bottom: 10px;
         }
 
@@ -61,7 +61,7 @@
 
         .tarjeta:hover {
             transform: translateY(-5px);
-            border-color: #1565c0;
+            border-color: #424242;
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
         }
 
@@ -69,7 +69,7 @@
             font-size: 22px;
             font-weight: bold;
             color: #263238;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             min-height: 52px;
             display: flex;
             align-items: center;
@@ -93,7 +93,7 @@
             padding: 8px 16px;
             border-radius: 20px;
             font-weight: bold;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .estado {
@@ -126,26 +126,56 @@
 </head>
 
 <body>
-    {% set motorola_one = [
-        {"nombre": "Motorola One", "codename": "deen", "platform": "MSM8953"},
-        {"nombre": "Motorola One Hyper", "codename": "def", "platform": "SM6150"},
-        {"nombre": "Motorola One Fusion", "codename": "astro", "platform": "SDM710"}
-    ] %}
-
     {% set moto_g = [
         {"nombre": "Moto G8 Plus", "codename": "doha", "platform": "SM6125"},
         {"nombre": "Moto G8 Power", "codename": "sofiar", "platform": "SM6125"},
+        {"nombre": "Moto G Power", "codename": "sofia", "platform": "SM6125"},
+        {"nombre": "Moto G8 / G Fast", "codename": "rav", "platform": "SM6125"},
         {"nombre": "Moto G Stylus / Moto G Pro", "codename": "sofiap", "platform": "SM6125"},
+        {"nombre": "Moto G Play 2021", "codename": "guamna", "platform": "SM4250"},
         {"nombre": "Moto G9 Plus", "codename": "odessa", "platform": "SM7150"},
+        {"nombre": "Moto G Stylus 2021", "codename": "minsk", "platform": "SM7150"},
+        {"nombre": "Moto G50", "codename": "ibiza", "platform": "SM4350"},
         {"nombre": "Moto G60 / Moto G40 Fusion", "codename": "hanoip", "platform": "SM7150"},
         {"nombre": "Moto G71 5G", "codename": "corfur", "platform": "SM6375"},
         {"nombre": "Moto G51 5G", "codename": "cypfq", "platform": "SM4350"},
-        {"nombre": "Moto G53 5G", "codename": "penang", "platform": "SM4350"}
+        {"nombre": "Moto G52j 5G / Moto G52j 5G II", "codename": "cypfr", "platform": "SM6375"},
+        {"nombre": "Moto G62 5G", "codename": "rhodec / rhodei", "platform": "SM6375"},
+        {"nombre": "Moto G53 5G / Moto G53j 5G / Moto G53y 5G / Moto G53s 5G", "codename": "penang", "platform": "SM4350"},
+        {"nombre": "Moto G 5G 2023", "codename": "pnangn", "platform": "SM4350"},
+        {"nombre": "Moto G Stylus 2023", "codename": "genevn", "platform": "SM6450"},
+        {"nombre": "Moto G Stylus 2024", "codename": "boston", "platform": "SM6450"}
+    ] %}
+
+    {% set moto_x = [
+        {"nombre": "Moto X50 Ultra", "codename": "ctwo", "platform": "SM8635"}
+    ] %}
+
+    {% set moto_z = [
+        {"nombre": "Z4", "codename": "foles", "platform": "SM6150"}
     ] %}
 
     {% set edge = [
-        {"nombre": "Motorola Edge 30 Pro", "codename": "hiphi", "platform": "SM8450"},
-        {"nombre": "Motorola Edge 50 Fusion", "codename": "cusco", "platform": "SM6450"}
+        {"nombre": "Edge Plus", "codename": "burton", "platform": "SM8250"},
+        {"nombre": "Edge 30 Pro / Edge+ 2022", "codename": "hiphi", "platform": "SM8450"},
+        {"nombre": "Edge X30", "codename": "hiphic", "platform": "SM8450"},
+        {"nombre": "Edge 50", "codename": "tank", "platform": "SM7450"},
+        {"nombre": "Edge 50 Pro", "codename": "eqe", "platform": "SM7550"},
+        {"nombre": "Edge 50 Fusion", "codename": "cusco", "platform": "SM6450"},
+        {"nombre": "Edge 50 Ultra", "codename": "ctwo", "platform": "SM8635"}
+    ] %}
+
+    {% set motorola_one = [
+        {"nombre": "One", "codename": "deen", "platform": "MSM8953"},
+        {"nombre": "One Zoom", "codename": "parker", "platform": "SM6150"},
+        {"nombre": "One Vision Plus", "codename": "doha", "platform": "SM6125"},
+        {"nombre": "One Hyper", "codename": "def", "platform": "SM6150"},
+        {"nombre": "One Fusion Plus", "codename": "liber", "platform": "SM7150"},
+        {"nombre": "One Fusion", "codename": "astro", "platform": "SDM710"}
+    ] %}
+
+    {% set moto_p = [
+        {"nombre": "P30 Play", "codename": "deen", "platform": "MSM8953"}
     ] %}
 
     <div class="contenedor">
@@ -154,6 +184,110 @@
         <p class="descripcion">
             Lista de dispositivos Motorola que serán agregados próximamente al proyecto.
         </p>
+
+        <h2 class="seccion">Motorola Moto G</h2>
+
+        <div class="grid-dispositivos">
+            {% for dispositivo in moto_g %}
+            <div class="tarjeta">
+                <div class="nombre">
+                    {{ dispositivo.nombre }}
+                </div>
+
+                <div class="codename">
+                    Codename: {{ dispositivo.codename }}
+                </div>
+
+                <br>
+
+                <div class="platform">
+                    Platform: {{ dispositivo.platform }}
+                </div>
+
+                <span class="estado">
+                    Próximamente
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2 class="seccion">Motorola Moto X</h2>
+
+        <div class="grid-dispositivos">
+            {% for dispositivo in moto_x %}
+            <div class="tarjeta">
+                <div class="nombre">
+                    {{ dispositivo.nombre }}
+                </div>
+
+                <div class="codename">
+                    Codename: {{ dispositivo.codename }}
+                </div>
+
+                <br>
+
+                <div class="platform">
+                    Platform: {{ dispositivo.platform }}
+                </div>
+
+                <span class="estado">
+                    Próximamente
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2 class="seccion">Motorola Moto Z</h2>
+
+        <div class="grid-dispositivos">
+            {% for dispositivo in moto_z %}
+            <div class="tarjeta">
+                <div class="nombre">
+                    {{ dispositivo.nombre }}
+                </div>
+
+                <div class="codename">
+                    Codename: {{ dispositivo.codename }}
+                </div>
+
+                <br>
+
+                <div class="platform">
+                    Platform: {{ dispositivo.platform }}
+                </div>
+
+                <span class="estado">
+                    Próximamente
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2 class="seccion">Motorola Edge</h2>
+
+        <div class="grid-dispositivos">
+            {% for dispositivo in edge %}
+            <div class="tarjeta">
+                <div class="nombre">
+                    {{ dispositivo.nombre }}
+                </div>
+
+                <div class="codename">
+                    Codename: {{ dispositivo.codename }}
+                </div>
+
+                <br>
+
+                <div class="platform">
+                    Platform: {{ dispositivo.platform }}
+                </div>
+
+                <span class="estado">
+                    Próximamente
+                </span>
+            </div>
+            {% endfor %}
+        </div>
 
         <h2 class="seccion">Motorola One</h2>
 
@@ -181,36 +315,10 @@
             {% endfor %}
         </div>
 
-        <h2 class="seccion">Moto G</h2>
+        <h2 class="seccion">Motorola P</h2>
 
         <div class="grid-dispositivos">
-            {% for dispositivo in moto_g %}
-            <div class="tarjeta">
-                <div class="nombre">
-                    {{ dispositivo.nombre }}
-                </div>
-
-                <div class="codename">
-                    Codename: {{ dispositivo.codename }}
-                </div>
-
-                <br>
-
-                <div class="platform">
-                    Platform: {{ dispositivo.platform }}
-                </div>
-
-                <span class="estado">
-                    Próximamente
-                </span>
-            </div>
-            {% endfor %}
-        </div>
-
-        <h2 class="seccion">Motorola Edge</h2>
-
-        <div class="grid-dispositivos">
-            {% for dispositivo in edge %}
+            {% for dispositivo in moto_p %}
             <div class="tarjeta">
                 <div class="nombre">
                     {{ dispositivo.nombre }}

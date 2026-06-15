@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motorola Moto P</title>
+    <title>Motorola P</title>
 
     <style>
         body {
@@ -16,7 +16,7 @@
 
         .contenedor {
             width: 90%;
-            max-width: 850px;
+            max-width: 1200px;
             margin: 40px auto;
             background-color: white;
             padding: 30px;
@@ -25,7 +25,7 @@
         }
 
         h1 {
-            color: #ad1457;
+            color: #1428ad;
             margin-bottom: 10px;
         }
 
@@ -35,9 +35,13 @@
             margin-bottom: 30px;
         }
 
+        .grid-dispositivos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
         .tarjeta {
-            width: 280px;
-            margin: auto;
             background-color: #f8fafc;
             border-radius: 16px;
             border: 2px solid #cfd8dc;
@@ -48,21 +52,26 @@
 
         .tarjeta:hover {
             transform: translateY(-5px);
-            border-color: #ad1457;
+            border-color: #1428ad;
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
         }
 
         .imagen-dispositivo {
             width: 150px;
             height: auto;
+            object-fit: contain;
             margin-bottom: 18px;
         }
 
         .nombre {
-            font-size: 23px;
+            font-size: 22px;
             font-weight: bold;
             color: #263238;
             margin-bottom: 8px;
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .codename {
@@ -123,7 +132,7 @@
 
         .volver {
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 35px;
             padding: 12px 24px;
             background-color: #37474f;
             color: white;
@@ -137,54 +146,65 @@
             background-color: #263238;
             transform: scale(1.04);
         }
+
     </style>
 </head>
 
 <body>
+    {% set dispositivos = [
+        {"nombre": "P50", "codename": "kane", "platform": "EXYNOS9609"}
+    ] %}
+
     <div class="contenedor">
-        <h1>Motorola Moto P</h1>
+        <h1>Motorola P</h1>
 
         <p class="descripcion">
-            Familia de dispositivos Motorola Moto P con acceso a información de LineageOS y Evolution X.
+            Familia de dispositivos Motorola P con acceso a información de LineageOS y Evolution X.
         </p>
 
-        <div class="tarjeta">
-            <img
-                class="imagen-dispositivo"
-                src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/kane.png"
-                alt="Moto P50">
+        <div class="grid-dispositivos">
+            {% for dispositivo in dispositivos %}
+            <div class="tarjeta">
+                <img
+                    class="imagen-dispositivo"
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/{{ dispositivo.codename }}.png"
+                    alt="{{ dispositivo.nombre }}">
 
-            <div class="nombre">
-                Moto P50
+                <div class="nombre">
+                    {{ dispositivo.nombre }}
+                </div>
+
+                <div class="codename">
+                    Codename: {{ dispositivo.codename }}
+                </div>
+
+                {% if dispositivo.platform %}
+                <br>
+
+                <div class="platform">
+                    Platform: {{ dispositivo.platform }}
+                </div>
+                {% endif %}
+
+                <div class="acciones-rom">
+                    <a
+                        class="boton-lineage"
+                        href="https://wiki.lineageos.org/devices/{{ dispositivo.codename }}/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en LineageOS
+                    </a>
+
+                    <a
+                        class="boton-evolution"
+                        href="https://evolution-x.org/devices/{{ dispositivo.codename }}"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Evolution X
+                    </a>
+                </div>
             </div>
-
-            <div class="codename">
-                Codename: kane
-            </div>
-
-            <br>
-
-            <div class="platform">
-                Platform: EXYNOS9609
-            </div>
-
-            <div class="acciones-rom">
-                <a
-                    class="boton-lineage"
-                    href="https://wiki.lineageos.org/devices/kane/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Ver en LineageOS
-                </a>
-
-                <a
-                    class="boton-evolution"
-                    href="https://evolution-x.org/devices/kane"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Ver en Evolution X
-                </a>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <a class="volver" href="/devices">Volver a dispositivos</a>

@@ -25,7 +25,7 @@
         }
 
         h1 {
-            color: #0d47a1;
+            color: #00838f;
             margin-bottom: 10px;
         }
 
@@ -52,13 +52,14 @@
 
         .tarjeta:hover {
             transform: translateY(-5px);
-            border-color: #1565c0;
+            border-color: #00838f;
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
         }
 
         .imagen-dispositivo {
             width: 150px;
             height: auto;
+            object-fit: contain;
             margin-bottom: 18px;
         }
 
@@ -67,6 +68,10 @@
             font-weight: bold;
             color: #263238;
             margin-bottom: 8px;
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .codename {
@@ -141,10 +146,26 @@
             background-color: #263238;
             transform: scale(1.04);
         }
+
     </style>
 </head>
 
 <body>
+    {% set dispositivos = [
+        {"nombre": "Edge", "codename": "racer", "platform": "SM7250"},
+        {"nombre": "Edge S", "codename": "nio", "platform": "SM8250"},
+        {"nombre": "Edge S30", "codename": "xpeng", "platform": "SM8350"},
+        {"nombre": "Edge 20", "codename": "berlin", "platform": "SM7325"},
+        {"nombre": "Edge 20 Pro", "codename": "pstar", "platform": "SM8250"},
+        {"nombre": "Edge 2021", "codename": "berlna", "platform": "SM7325"},
+        {"nombre": "Edge 30", "codename": "dubai", "platform": "SM7325"},
+        {"nombre": "Edge 30 Fusion", "codename": "tundra", "platform": "SM8350"},
+        {"nombre": "Edge 30 Neo", "codename": "miami", "platform": "SM6375"},
+        {"nombre": "Edge 30 Ultra", "codename": "eqs", "platform": "SM8475"},
+        {"nombre": "Edge 40 Pro / Edge+ 2023", "codename": "rtwo", "platform": "SM8550"},
+        {"nombre": "Edge 2024", "codename": "avatrn", "platform": "SM7435"}
+    ] %}
+
     <div class="contenedor">
         <h1>Motorola Edge</h1>
 
@@ -153,31 +174,33 @@
         </p>
 
         <div class="grid-dispositivos">
-
+            {% for dispositivo in dispositivos %}
             <div class="tarjeta">
                 <img
                     class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/nio.png"
-                    alt="Motorola Edge S">
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/{{ dispositivo.codename }}.png"
+                    alt="{{ dispositivo.nombre }}">
 
                 <div class="nombre">
-                    Motorola Edge S
+                    {{ dispositivo.nombre }}
                 </div>
 
                 <div class="codename">
-                    Codename: nio
+                    Codename: {{ dispositivo.codename }}
                 </div>
 
+                {% if dispositivo.platform %}
                 <br>
 
                 <div class="platform">
-                    Platform: SM8250
+                    Platform: {{ dispositivo.platform }}
                 </div>
+                {% endif %}
 
                 <div class="acciones-rom">
                     <a
                         class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/nio/variant1/"
+                        href="https://wiki.lineageos.org/devices/{{ dispositivo.codename }}/"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en LineageOS
@@ -185,200 +208,14 @@
 
                     <a
                         class="boton-evolution"
-                        href="https://evolution-x.org/devices/nio"
+                        href="https://evolution-x.org/devices/{{ dispositivo.codename }}"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en Evolution X
                     </a>
                 </div>
             </div>
-
-            <div class="tarjeta">
-                <img
-                    class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/xpeng.png"
-                    alt="Motorola Edge S30">
-
-                <div class="nombre">
-                    Motorola Edge S30
-                </div>
-
-                <div class="codename">
-                    Codename: xpeng
-                </div>
-
-                <br>
-
-                <div class="platform">
-                    Platform: SM8350
-                </div>
-
-                <div class="acciones-rom">
-                    <a
-                        class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/xpeng/variant2/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en LineageOS
-                    </a>
-
-                    <a
-                        class="boton-evolution"
-                        href="https://evolution-x.org/devices/xpeng"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en Evolution X
-                    </a>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <img
-                    class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/berlna.png"
-                    alt="Motorola Edge 2021">
-
-                <div class="nombre">
-                    Motorola Edge 2021
-                </div>
-
-                <div class="codename">
-                    Codename: berlna
-                </div>
-
-                <br>
-
-                <div class="platform">
-                    Platform: SM7325
-                </div>
-
-                <div class="acciones-rom">
-                    <a
-                        class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/berlna/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en LineageOS
-                    </a>
-
-                    <a
-                        class="boton-evolution"
-                        href="https://evolution-x.org/devices/berlna"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en Evolution X
-                    </a>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <img
-                    class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/dubai.png"
-                    alt="Motorola Edge 30">
-
-                <div class="nombre">
-                    Motorola Edge 30
-                </div>
-
-                <div class="codename">
-                    Codename: dubai
-                </div>
-
-                <br>
-
-                <div class="platform">
-                    Platform: SM7325
-                </div>
-
-                <div class="acciones-rom">
-                    <a
-                        class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/dubai/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en LineageOS
-                    </a>
-
-                    <a
-                        class="boton-evolution"
-                        href="https://evolution-x.org/devices/dubai"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en Evolution X
-                    </a>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <img
-                    class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/tundra.png"
-                    alt="Motorola Edge 30 Fusion">
-
-                <div class="nombre">
-                    Motorola Edge 30 Fusion
-                </div>
-
-                <div class="codename">
-                    Codename: tundra
-                </div>
-
-                <br>
-
-                <div class="platform">
-                    Platform: SM8350
-                </div>
-
-                <div class="acciones-rom">
-                    <a
-                        class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/tundra/variant1/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en LineageOS
-                    </a>
-
-                    <a
-                        class="boton-evolution"
-                        href="https://evolution-x.org/devices/tundra"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en Evolution X
-                    </a>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <img
-                    class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/miami.png"
-                    alt="Motorola Edge 30 Neo">
-
-                <div class="nombre">
-                    Motorola Edge 30 Neo
-                </div>
-
-                <div class="codename">
-                    Codename: miami
-                </div>
-
-                <br>
-
-                <div class="platform">
-                    Platform: SM6375
-                </div>
-
-                <div class="acciones-rom">
-                    <a
-                        class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/miami/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver en LineageOS
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <a class="volver" href="/devices">Volver a dispositivos</a>
