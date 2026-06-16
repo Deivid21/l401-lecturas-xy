@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motorola Moto G</title>
+    <title>Motorola Moto E</title>
 
     <style>
         body {
@@ -25,7 +25,7 @@
         }
 
         h1 {
-            color: #1565c0;
+            color: #2e7d32;
             margin-bottom: 10px;
         }
 
@@ -52,7 +52,7 @@
 
         .tarjeta:hover {
             transform: translateY(-5px);
-            border-color: #1565c0;
+            border-color: #2e7d32;
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
         }
 
@@ -151,67 +151,43 @@
 </head>
 
 <body>
-    {% set dispositivos = [
-        {"nombre": "Moto G6 Plus", "codename": "evert", "platform": "SDM630"},
-        {"nombre": "Moto G7", "codename": "river", "platform": "SDM632"},
-        {"nombre": "Moto G7 Play", "codename": "channel", "platform": "SDM632"},
-        {"nombre": "Moto G7 Plus", "codename": "lake", "platform": "SDM636"},
-        {"nombre": "Moto G7 Power", "codename": "ocean", "platform": "SDM632"},
-        {"nombre": "Moto G9 Play / Moto G9", "codename": "guamp", "platform": "SM6115"},
-        {"nombre": "Moto G9 Power", "codename": "cebu", "platform": "SM6115"},
-        {"nombre": "Moto G 5G Plus", "codename": "nairo", "platform": "SM7250"},
-        {"nombre": "Moto G 5G", "codename": "kiev", "platform": "SM7225"},
-        {"nombre": "Moto G Power 2021", "codename": "borneo", "platform": "SM6115"},
-        {"nombre": "Moto G10 / Moto G10 Power", "codename": "capri", "platform": "SM4250"},
-        {"nombre": "Moto G30", "codename": "caprip", "platform": "SM6115"},
-        {"nombre": "Moto G Stylus 5G", "codename": "denver", "platform": "SM4350"},
-        {"nombre": "Moto G100", "codename": "nio", "platform": "SM8250"},
-        {"nombre": "Moto G200 5G", "codename": "xpeng", "platform": "SM8350"},
-        {"nombre": "Moto G Stylus 5G - 2022", "codename": "milanf", "platform": "SM6375"},
-        {"nombre": "Moto G52", "codename": "rhode", "platform": "SM6225"},
-        {"nombre": "Moto G82 5G / Moto G71s", "codename": "rhodep", "platform": "SM6375"},
-        {"nombre": "Moto G42", "codename": "hawao", "platform": "SM6225"},
-        {"nombre": "Moto G32", "codename": "devon", "platform": "SM6225"},
-        {"nombre": "Moto G84 5G", "codename": "bangkk", "platform": "SM6375"},
-        {"nombre": "Moto G34 5G / Moto G45 5G", "codename": "fogos", "platform": "SM6375"},
-        {"nombre": "Moto G 5G - 2024", "codename": "fogo", "platform": "SM4375"}
-    ] %}
+    
 
     <div class="contenedor">
-        <h1>Motorola Moto G</h1>
+        <h1>Motorola Moto E</h1>
 
         <p class="descripcion">
-            Familia de dispositivos Motorola Moto G con acceso a información de LineageOS y Evolution X.
+            Familia de dispositivos Motorola Moto E con acceso a información de LineageOS y Evolution X.
         </p>
 
         <div class="grid-dispositivos">
-            {% for dispositivo in dispositivos %}
+            
             <div class="tarjeta">
                 <img
                     class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/{{ dispositivo.codename }}.png"
-                    alt="{{ dispositivo.nombre }}">
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/guam.png"
+                    alt="Moto E7 Plus">
 
                 <div class="nombre">
-                    {{ dispositivo.nombre }}
+                    Moto E7 Plus
                 </div>
 
                 <div class="codename">
-                    Codename: {{ dispositivo.codename }}
+                    Codename: guam
                 </div>
 
-                {% if dispositivo.platform %}
+                
                 <br>
 
                 <div class="platform">
-                    Platform: {{ dispositivo.platform }}
+                    Platform: SM4250
                 </div>
-                {% endif %}
+                
 
                 <div class="acciones-rom">
                     <a
                         class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/{{ dispositivo.codename }}/"
+                        href="https://wiki.lineageos.org/devices/guam/"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en LineageOS
@@ -219,16 +195,16 @@
 
                     <a
                         class="boton-evolution"
-                        href="https://evolution-x.org/devices/{{ dispositivo.codename }}"
+                        href="https://evolution-x.org/devices/guam"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en Evolution X
                     </a>
                 </div>
             </div>
-            {% endfor %}
+            
         </div>
     </div>
-    <a class="volver" href="/devices">Volver a dispositivos</a>
+    <a class="volver" href="../device.html">Volver a dispositivos</a>
 </body>
 </html>

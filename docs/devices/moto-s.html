@@ -151,9 +151,7 @@
 </head>
 
 <body>
-    {% set dispositivos = [
-        {"nombre": "Moto S30 Pro", "codename": "tundra", "platform": "SM8350"}
-    ] %}
+    
 
     <div class="contenedor">
         <h1>Motorola Moto S</h1>
@@ -163,33 +161,33 @@
         </p>
 
         <div class="grid-dispositivos">
-            {% for dispositivo in dispositivos %}
+            
             <div class="tarjeta">
                 <img
                     class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/{{ dispositivo.codename }}.png"
-                    alt="{{ dispositivo.nombre }}">
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/tundra.png"
+                    alt="Moto S30 Pro">
 
                 <div class="nombre">
-                    {{ dispositivo.nombre }}
+                    Moto S30 Pro
                 </div>
 
                 <div class="codename">
-                    Codename: {{ dispositivo.codename }}
+                    Codename: tundra
                 </div>
 
-                {% if dispositivo.platform %}
+                
                 <br>
 
                 <div class="platform">
-                    Platform: {{ dispositivo.platform }}
+                    Platform: SM8350
                 </div>
-                {% endif %}
+                
 
                 <div class="acciones-rom">
                     <a
                         class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/{{ dispositivo.codename }}/"
+                        href="https://wiki.lineageos.org/devices/tundra/"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en LineageOS
@@ -197,16 +195,16 @@
 
                     <a
                         class="boton-evolution"
-                        href="https://evolution-x.org/devices/{{ dispositivo.codename }}"
+                        href="https://evolution-x.org/devices/tundra"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en Evolution X
                     </a>
                 </div>
             </div>
-            {% endfor %}
+            
         </div>
     </div>
-    <a class="volver" href="/devices">Volver a dispositivos</a>
+    <a class="volver" href="../device.html">Volver a dispositivos</a>
 </body>
 </html>

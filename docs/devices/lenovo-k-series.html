@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenovo K Series</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #eef2f7;
+            font-family: Arial, sans-serif;
+            color: #263238;
+            text-align: center;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        h1 {
+            color: #b71c1c;
+            margin-bottom: 10px;
+        }
+
+        .descripcion {
+            color: #546e7a;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .grid-dispositivos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .tarjeta {
+            background-color: #f8fafc;
+            border-radius: 16px;
+            border: 2px solid #cfd8dc;
+            padding: 22px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            border-color: #b71c1c;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+        }
+
+        .imagen-dispositivo {
+            width: 150px;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 18px;
+        }
+
+        .nombre {
+            font-size: 22px;
+            font-weight: bold;
+            color: #263238;
+            margin-bottom: 8px;
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .codename {
+            display: inline-block;
+            background-color: #455a64;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .platform {
+            display: inline-block;
+            background-color: #455a64;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .acciones-rom {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .boton-lineage,
+        .boton-evolution {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 13px 18px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .boton-lineage {
+            background-color: #226352;
+        }
+
+        .boton-lineage:hover {
+            background-color: #17483b;
+            transform: scale(1.04);
+        }
+
+        .boton-evolution {
+            background-color: #1565c0;
+        }
+
+        .boton-evolution:hover {
+            background-color: #0d47a1;
+            transform: scale(1.04);
+        }
+
+        .volver {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 12px 24px;
+            background-color: #37474f;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .volver:hover {
+            background-color: #263238;
+            transform: scale(1.04);
+        }
+
+    </style>
+</head>
+
+<body>
+    
+
+    <div class="contenedor">
+        <h1>Lenovo K Series</h1>
+
+        <p class="descripcion">
+            Familia de dispositivos Lenovo K Series con acceso a información de LineageOS y Evolution X.
+        </p>
+
+        <div class="grid-dispositivos">
+            
+            <div class="tarjeta">
+                <img
+                    class="imagen-dispositivo"
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/guam.png"
+                    alt="K12">
+
+                <div class="nombre">
+                    K12
+                </div>
+
+                <div class="codename">
+                    Codename: guam
+                </div>
+
+                
+                <br>
+
+                <div class="platform">
+                    Platform: SM4250
+                </div>
+                
+
+                <div class="acciones-rom">
+                    <a
+                        class="boton-lineage"
+                        href="https://wiki.lineageos.org/devices/guam/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en LineageOS
+                    </a>
+
+                    <a
+                        class="boton-evolution"
+                        href="https://evolution-x.org/devices/guam"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Evolution X
+                    </a>
+                </div>
+            </div>
+            
+            <div class="tarjeta">
+                <img
+                    class="imagen-dispositivo"
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/guamp.png"
+                    alt="K12 Note">
+
+                <div class="nombre">
+                    K12 Note
+                </div>
+
+                <div class="codename">
+                    Codename: guamp
+                </div>
+
+                
+                <br>
+
+                <div class="platform">
+                    Platform: SM6115
+                </div>
+                
+
+                <div class="acciones-rom">
+                    <a
+                        class="boton-lineage"
+                        href="https://wiki.lineageos.org/devices/guamp/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en LineageOS
+                    </a>
+
+                    <a
+                        class="boton-evolution"
+                        href="https://evolution-x.org/devices/guamp"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Evolution X
+                    </a>
+                </div>
+            </div>
+            
+            <div class="tarjeta">
+                <img
+                    class="imagen-dispositivo"
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/cebu.png"
+                    alt="K12 Pro">
+
+                <div class="nombre">
+                    K12 Pro
+                </div>
+
+                <div class="codename">
+                    Codename: cebu
+                </div>
+
+                
+                <br>
+
+                <div class="platform">
+                    Platform: SM6115
+                </div>
+                
+
+                <div class="acciones-rom">
+                    <a
+                        class="boton-lineage"
+                        href="https://wiki.lineageos.org/devices/cebu/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en LineageOS
+                    </a>
+
+                    <a
+                        class="boton-evolution"
+                        href="https://evolution-x.org/devices/cebu"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Evolution X
+                    </a>
+                </div>
+            </div>
+            
+            <div class="tarjeta">
+                <img
+                    class="imagen-dispositivo"
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/capri.png"
+                    alt="K13 Note">
+
+                <div class="nombre">
+                    K13 Note
+                </div>
+
+                <div class="codename">
+                    Codename: capri
+                </div>
+
+                
+                <br>
+
+                <div class="platform">
+                    Platform: SM4250
+                </div>
+                
+
+                <div class="acciones-rom">
+                    <a
+                        class="boton-lineage"
+                        href="https://wiki.lineageos.org/devices/capri/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en LineageOS
+                    </a>
+
+                    <a
+                        class="boton-evolution"
+                        href="https://evolution-x.org/devices/capri"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Evolution X
+                    </a>
+                </div>
+            </div>
+            
+            <div class="tarjeta">
+                <img
+                    class="imagen-dispositivo"
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/caprip.png"
+                    alt="K13 Pro">
+
+                <div class="nombre">
+                    K13 Pro
+                </div>
+
+                <div class="codename">
+                    Codename: caprip
+                </div>
+
+                
+                <br>
+
+                <div class="platform">
+                    Platform: SM6115
+                </div>
+                
+
+                <div class="acciones-rom">
+                    <a
+                        class="boton-lineage"
+                        href="https://wiki.lineageos.org/devices/caprip/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en LineageOS
+                    </a>
+
+                    <a
+                        class="boton-evolution"
+                        href="https://evolution-x.org/devices/caprip"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Evolution X
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <a class="volver" href="../device.html">Volver a dispositivos</a>
+</body>
+</html>

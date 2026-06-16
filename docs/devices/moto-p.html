@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motorola Edge</title>
+    <title>Motorola P</title>
 
     <style>
         body {
@@ -16,7 +16,7 @@
 
         .contenedor {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 40px auto;
             background-color: white;
             padding: 30px;
@@ -25,7 +25,7 @@
         }
 
         h1 {
-            color: #00838f;
+            color: #1428ad;
             margin-bottom: 10px;
         }
 
@@ -52,7 +52,7 @@
 
         .tarjeta:hover {
             transform: translateY(-5px);
-            border-color: #00838f;
+            border-color: #1428ad;
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
         }
 
@@ -151,56 +151,43 @@
 </head>
 
 <body>
-    {% set dispositivos = [
-        {"nombre": "Edge", "codename": "racer", "platform": "SM7250"},
-        {"nombre": "Edge S", "codename": "nio", "platform": "SM8250"},
-        {"nombre": "Edge S30", "codename": "xpeng", "platform": "SM8350"},
-        {"nombre": "Edge 20", "codename": "berlin", "platform": "SM7325"},
-        {"nombre": "Edge 20 Pro", "codename": "pstar", "platform": "SM8250"},
-        {"nombre": "Edge 2021", "codename": "berlna", "platform": "SM7325"},
-        {"nombre": "Edge 30", "codename": "dubai", "platform": "SM7325"},
-        {"nombre": "Edge 30 Fusion", "codename": "tundra", "platform": "SM8350"},
-        {"nombre": "Edge 30 Neo", "codename": "miami", "platform": "SM6375"},
-        {"nombre": "Edge 30 Ultra", "codename": "eqs", "platform": "SM8475"},
-        {"nombre": "Edge 40 Pro / Edge+ 2023", "codename": "rtwo", "platform": "SM8550"},
-        {"nombre": "Edge 2024", "codename": "avatrn", "platform": "SM7435"}
-    ] %}
+    
 
     <div class="contenedor">
-        <h1>Motorola Edge</h1>
+        <h1>Motorola P</h1>
 
         <p class="descripcion">
-            Familia de dispositivos Motorola Edge con acceso a información de LineageOS y Evolution X.
+            Familia de dispositivos Motorola P con acceso a información de LineageOS y Evolution X.
         </p>
 
         <div class="grid-dispositivos">
-            {% for dispositivo in dispositivos %}
+            
             <div class="tarjeta">
                 <img
                     class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/{{ dispositivo.codename }}.png"
-                    alt="{{ dispositivo.nombre }}">
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/kane.png"
+                    alt="P50">
 
                 <div class="nombre">
-                    {{ dispositivo.nombre }}
+                    P50
                 </div>
 
                 <div class="codename">
-                    Codename: {{ dispositivo.codename }}
+                    Codename: kane
                 </div>
 
-                {% if dispositivo.platform %}
+                
                 <br>
 
                 <div class="platform">
-                    Platform: {{ dispositivo.platform }}
+                    Platform: EXYNOS9609
                 </div>
-                {% endif %}
+                
 
                 <div class="acciones-rom">
                     <a
                         class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/{{ dispositivo.codename }}/"
+                        href="https://wiki.lineageos.org/devices/kane/"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en LineageOS
@@ -208,16 +195,16 @@
 
                     <a
                         class="boton-evolution"
-                        href="https://evolution-x.org/devices/{{ dispositivo.codename }}"
+                        href="https://evolution-x.org/devices/kane"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en Evolution X
                     </a>
                 </div>
             </div>
-            {% endfor %}
+            
         </div>
     </div>
-    <a class="volver" href="/devices">Volver a dispositivos</a>
+    <a class="volver" href="../device.html">Volver a dispositivos</a>
 </body>
 </html>

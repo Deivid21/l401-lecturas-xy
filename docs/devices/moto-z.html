@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motorola Moto E</title>
+    <title>Motorola Moto Z</title>
 
     <style>
         body {
@@ -25,7 +25,7 @@
         }
 
         h1 {
-            color: #2e7d32;
+            color: #8d6e63;
             margin-bottom: 10px;
         }
 
@@ -52,7 +52,7 @@
 
         .tarjeta:hover {
             transform: translateY(-5px);
-            border-color: #2e7d32;
+            border-color: #8d6e63;
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
         }
 
@@ -151,45 +151,43 @@
 </head>
 
 <body>
-    {% set dispositivos = [
-        {"nombre": "Moto E7 Plus", "codename": "guam", "platform": "SM4250"}
-    ] %}
+    
 
     <div class="contenedor">
-        <h1>Motorola Moto E</h1>
+        <h1>Motorola Moto Z</h1>
 
         <p class="descripcion">
-            Familia de dispositivos Motorola Moto E con acceso a información de LineageOS y Evolution X.
+            Familia de dispositivos Motorola Moto Z con acceso a información de LineageOS y Evolution X.
         </p>
 
         <div class="grid-dispositivos">
-            {% for dispositivo in dispositivos %}
+            
             <div class="tarjeta">
                 <img
                     class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/{{ dispositivo.codename }}.png"
-                    alt="{{ dispositivo.nombre }}">
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/nash.png"
+                    alt="Moto Z2 Force / Moto Z (2018)">
 
                 <div class="nombre">
-                    {{ dispositivo.nombre }}
+                    Moto Z2 Force / Moto Z (2018)
                 </div>
 
                 <div class="codename">
-                    Codename: {{ dispositivo.codename }}
+                    Codename: nash
                 </div>
 
-                {% if dispositivo.platform %}
+                
                 <br>
 
                 <div class="platform">
-                    Platform: {{ dispositivo.platform }}
+                    Platform: MSM8998
                 </div>
-                {% endif %}
+                
 
                 <div class="acciones-rom">
                     <a
                         class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/{{ dispositivo.codename }}/"
+                        href="https://wiki.lineageos.org/devices/nash/"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en LineageOS
@@ -197,16 +195,98 @@
 
                     <a
                         class="boton-evolution"
-                        href="https://evolution-x.org/devices/{{ dispositivo.codename }}"
+                        href="https://evolution-x.org/devices/nash"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en Evolution X
                     </a>
                 </div>
             </div>
-            {% endfor %}
+            
+            <div class="tarjeta">
+                <img
+                    class="imagen-dispositivo"
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/messi.png"
+                    alt="Moto Z3">
+
+                <div class="nombre">
+                    Moto Z3
+                </div>
+
+                <div class="codename">
+                    Codename: messi
+                </div>
+
+                
+                <br>
+
+                <div class="platform">
+                    Platform: MSM8998
+                </div>
+                
+
+                <div class="acciones-rom">
+                    <a
+                        class="boton-lineage"
+                        href="https://wiki.lineageos.org/devices/messi/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en LineageOS
+                    </a>
+
+                    <a
+                        class="boton-evolution"
+                        href="https://evolution-x.org/devices/messi"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Evolution X
+                    </a>
+                </div>
+            </div>
+            
+            <div class="tarjeta">
+                <img
+                    class="imagen-dispositivo"
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/beckham.png"
+                    alt="Moto Z3 Play">
+
+                <div class="nombre">
+                    Moto Z3 Play
+                </div>
+
+                <div class="codename">
+                    Codename: beckham
+                </div>
+
+                
+                <br>
+
+                <div class="platform">
+                    Platform: SDM636
+                </div>
+                
+
+                <div class="acciones-rom">
+                    <a
+                        class="boton-lineage"
+                        href="https://wiki.lineageos.org/devices/beckham/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en LineageOS
+                    </a>
+
+                    <a
+                        class="boton-evolution"
+                        href="https://evolution-x.org/devices/beckham"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Evolution X
+                    </a>
+                </div>
+            </div>
+            
         </div>
     </div>
-    <a class="volver" href="/devices">Volver a dispositivos</a>
+    <a class="volver" href="../device.html">Volver a dispositivos</a>
 </body>
 </html>

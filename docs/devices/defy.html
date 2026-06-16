@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lenovo K Series</title>
+    <title>Motorola Defy</title>
 
     <style>
         body {
@@ -16,7 +16,7 @@
 
         .contenedor {
             width: 90%;
-            max-width: 1200px;
+            max-width: 850px;
             margin: 40px auto;
             background-color: white;
             padding: 30px;
@@ -25,7 +25,7 @@
         }
 
         h1 {
-            color: #b71c1c;
+            color: #a9a917;
             margin-bottom: 10px;
         }
 
@@ -52,7 +52,7 @@
 
         .tarjeta:hover {
             transform: translateY(-5px);
-            border-color: #b71c1c;
+            border-color: #a9a917;
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
         }
 
@@ -132,7 +132,7 @@
 
         .volver {
             display: inline-block;
-            margin-top: 35px;
+            margin-top: 30px;
             padding: 12px 24px;
             background-color: #37474f;
             color: white;
@@ -151,49 +151,43 @@
 </head>
 
 <body>
-    {% set dispositivos = [
-        {"nombre": "K12", "codename": "guam", "platform": "SM4250"},
-        {"nombre": "K12 Note", "codename": "guamp", "platform": "SM6115"},
-        {"nombre": "K12 Pro", "codename": "cebu", "platform": "SM6115"},
-        {"nombre": "K13 Note", "codename": "capri", "platform": "SM4250"},
-        {"nombre": "K13 Pro", "codename": "caprip", "platform": "SM6115"}
-    ] %}
+    
 
     <div class="contenedor">
-        <h1>Lenovo K Series</h1>
+        <h1>Motorola Defy</h1>
 
         <p class="descripcion">
-            Familia de dispositivos Lenovo K Series con acceso a información de LineageOS y Evolution X.
+            Familia de dispositivos Motorola Defy con acceso a información de LineageOS y Evolution X.
         </p>
 
         <div class="grid-dispositivos">
-            {% for dispositivo in dispositivos %}
+            
             <div class="tarjeta">
                 <img
                     class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/{{ dispositivo.codename }}.png"
-                    alt="{{ dispositivo.nombre }}">
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/bathena.png"
+                    alt="Defy 2021">
 
                 <div class="nombre">
-                    {{ dispositivo.nombre }}
+                    Defy 2021
                 </div>
 
                 <div class="codename">
-                    Codename: {{ dispositivo.codename }}
+                    Codename: bathena
                 </div>
 
-                {% if dispositivo.platform %}
+                
                 <br>
 
                 <div class="platform">
-                    Platform: {{ dispositivo.platform }}
+                    Platform: SM6115
                 </div>
-                {% endif %}
+                
 
                 <div class="acciones-rom">
                     <a
                         class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/{{ dispositivo.codename }}/"
+                        href="https://wiki.lineageos.org/devices/bathena/"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en LineageOS
@@ -201,16 +195,16 @@
 
                     <a
                         class="boton-evolution"
-                        href="https://evolution-x.org/devices/{{ dispositivo.codename }}"
+                        href="https://evolution-x.org/devices/bathena"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en Evolution X
                     </a>
                 </div>
             </div>
-            {% endfor %}
+            
         </div>
     </div>
-    <a class="volver" href="/devices">Volver a dispositivos</a>
+    <a class="volver" href="../device.html">Volver a dispositivos</a>
 </body>
 </html>

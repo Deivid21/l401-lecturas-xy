@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motorola One</title>
+    <title>Motorola Moto G</title>
 
     <style>
         body {
@@ -25,7 +25,7 @@
         }
 
         h1 {
-            color: #c62828;
+            color: #6a1b9a;
             margin-bottom: 10px;
         }
 
@@ -52,7 +52,7 @@
 
         .tarjeta:hover {
             transform: translateY(-5px);
-            border-color: #c62828;
+            border-color: #6a1b9a;
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
         }
 
@@ -151,48 +151,43 @@
 </head>
 
 <body>
-    {% set dispositivos = [
-        {"nombre": "One Action", "codename": "troika", "platform": "EXYNOS9609"},
-        {"nombre": "One Vision", "codename": "kane", "platform": "EXYNOS9609"},
-        {"nombre": "One 5G", "codename": "nairo", "platform": "SM7250"},
-        {"nombre": "One 5G Ace", "codename": "kiev", "platform": "SM7225"}
-    ] %}
+    
 
     <div class="contenedor">
-        <h1>Motorola One</h1>
+        <h1>Motorola Moto X</h1>
 
         <p class="descripcion">
-            Familia de dispositivos Motorola One con acceso a información de LineageOS y Evolution X.
+            Familia de dispositivos Motorola Moto X con acceso a información de LineageOS y Evolution X.
         </p>
 
         <div class="grid-dispositivos">
-            {% for dispositivo in dispositivos %}
+            
             <div class="tarjeta">
                 <img
                     class="imagen-dispositivo"
-                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/{{ dispositivo.codename }}.png"
-                    alt="{{ dispositivo.nombre }}">
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/payton.png"
+                    alt="Moto X4">
 
                 <div class="nombre">
-                    {{ dispositivo.nombre }}
+                    Moto X4
                 </div>
 
                 <div class="codename">
-                    Codename: {{ dispositivo.codename }}
+                    Codename: payton
                 </div>
 
-                {% if dispositivo.platform %}
+                
                 <br>
 
                 <div class="platform">
-                    Platform: {{ dispositivo.platform }}
+                    Platform: SDM630
                 </div>
-                {% endif %}
+                
 
                 <div class="acciones-rom">
                     <a
                         class="boton-lineage"
-                        href="https://wiki.lineageos.org/devices/{{ dispositivo.codename }}/"
+                        href="https://wiki.lineageos.org/devices/payton/"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en LineageOS
@@ -200,16 +195,98 @@
 
                     <a
                         class="boton-evolution"
-                        href="https://evolution-x.org/devices/{{ dispositivo.codename }}"
+                        href="https://evolution-x.org/devices/payton"
                         target="_blank"
                         rel="noopener noreferrer">
                         Ver en Evolution X
                     </a>
                 </div>
             </div>
-            {% endfor %}
+            
+            <div class="tarjeta">
+                <img
+                    class="imagen-dispositivo"
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/eqs.png"
+                    alt="Moto X30 Pro">
+
+                <div class="nombre">
+                    Moto X30 Pro
+                </div>
+
+                <div class="codename">
+                    Codename: eqs
+                </div>
+
+                
+                <br>
+
+                <div class="platform">
+                    Platform: SM8475
+                </div>
+                
+
+                <div class="acciones-rom">
+                    <a
+                        class="boton-lineage"
+                        href="https://wiki.lineageos.org/devices/eqs/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en LineageOS
+                    </a>
+
+                    <a
+                        class="boton-evolution"
+                        href="https://evolution-x.org/devices/eqs"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Evolution X
+                    </a>
+                </div>
+            </div>
+            
+            <div class="tarjeta">
+                <img
+                    class="imagen-dispositivo"
+                    src="https://raw.githubusercontent.com/LineageOS/lineage_wiki/refs/heads/main/images/devices/rtwo.png"
+                    alt="Moto X40">
+
+                <div class="nombre">
+                    Moto X40
+                </div>
+
+                <div class="codename">
+                    Codename: rtwo
+                </div>
+
+                
+                <br>
+
+                <div class="platform">
+                    Platform: SM8550
+                </div>
+                
+
+                <div class="acciones-rom">
+                    <a
+                        class="boton-lineage"
+                        href="https://wiki.lineageos.org/devices/rtwo/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en LineageOS
+                    </a>
+
+                    <a
+                        class="boton-evolution"
+                        href="https://evolution-x.org/devices/rtwo"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Evolution X
+                    </a>
+                </div>
+            </div>
+            
         </div>
     </div>
-    <a class="volver" href="/devices">Volver a dispositivos</a>
+    <a class="volver" href="../device.html">Volver a dispositivos</a>
 </body>
 </html>

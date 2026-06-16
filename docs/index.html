@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto DataXY - GitHub Pages</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #eef2f7;
+            font-family: Arial, sans-serif;
+            color: #263238;
+            text-align: center;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 860px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        h1 {
+            color: #0d47a1;
+            margin-bottom: 8px;
+        }
+
+        .descripcion {
+            color: #546e7a;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .aviso {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+            border: 2px solid #1565c0;
+            border-radius: 14px;
+            padding: 16px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .botones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .boton {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 15px 24px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            transform: scale(1.04);
+        }
+
+        .boton-devices {
+            background: linear-gradient(135deg, #1565c0, #00acc1);
+        }
+
+        .boton-devices:hover {
+            background: linear-gradient(135deg, #0d47a1, #00838f);
+        }
+
+        .boton-github {
+            background: linear-gradient(135deg, #24292f, #57606a);
+        }
+
+        .boton-github:hover {
+            background: linear-gradient(135deg, #000000, #343941);
+        }
+
+        .boton-paypal {
+            background: linear-gradient(135deg, #0070ba, #003087);
+        }
+
+        .boton-paypal:hover {
+            background: linear-gradient(135deg, #003087, #001f5c);
+        }
+
+        .boton-companero {
+            background: linear-gradient(135deg, #c68f28, #8e5300);
+        }
+
+        .boton-companero:hover {
+            background: linear-gradient(135deg, #8e5300, #5f3500);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <h1>Proyecto DataXY</h1>
+
+        <p class="descripcion">
+            Versión estática adaptada para GitHub Pages. Esta página no usa Flask ni lectura TCP en tiempo real.
+        </p>
+
+        <div class="aviso">
+            La sección dinámica de posición X/Y pertenece a la versión local con Flask.
+            En GitHub Pages se muestra la sección informativa de dispositivos Android.
+        </div>
+
+        <div class="botones">
+            <a class="boton boton-devices" href="device.html">
+                Ver dispositivos Android
+            </a>
+
+            <a
+                class="boton boton-github"
+                href="https://github.com/Deivid21/l401-lecturas-xy.git"
+                target="_blank"
+                rel="noopener noreferrer">
+                Ver repositorio en GitHub
+            </a>
+
+            <a
+                class="boton boton-paypal"
+                href="https://www.paypal.com/paypalme/Deivid21"
+                target="_blank"
+                rel="noopener noreferrer">
+                Donaciones por PayPal
+            </a>
+
+            <a
+                class="boton boton-companero"
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noopener noreferrer">
+                Proyecto de mi compañero
+            </a>
+        </div>
+    </div>
+</body>
+</html>
