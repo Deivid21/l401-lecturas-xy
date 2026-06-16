@@ -103,6 +103,10 @@ def moto_z():
 def one():
     return render_template("devices/one.html")
 
+@app.route("/devices/thinkphone")
+def thinkphone():
+    return render_template("devices/thinkphone.html")
+
 @app.route("/devices/coming-soon")
 def coming_soon():
     return render_template("devices/coming-soon.html")
